@@ -1,0 +1,5 @@
+node_modules
+foundryconfig.json
+types
+dist
+src/module/lib

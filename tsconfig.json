@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "types": ["@league-of-foundry-developers/foundry-vtt-types", "pixi.js"],
+    "target": "ES6",
+
+    "lib": ["DOM", "ES6", "ES2017", "ES2018", "ES2019"],
+    "sourceMap": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    //"noEmit": true,
+    "resolveJsonModule": true,
+
+    //"rootDir": "./src/",
+    "outDir": "./dist/",
+
+    "skipLibCheck": true,
+
+    "allowJs": true,
+    "checkJs": false
+  },
+
+  //"files": ["src/foundry-map-gen.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
