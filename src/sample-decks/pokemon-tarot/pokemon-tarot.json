@@ -1,0 +1,668 @@
+{
+  "name": "PokeTarot",
+  "type": "deck",
+  "description": "A deck of Pokemon themed tarot cards",
+  "img": "images/cards/tarot/pokemon/back_00.png",
+  "system": {},
+  "cards": [
+    {
+      "faces": [
+        {
+          "name": "The Fool",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Fool"
+        }
+      ],
+      "face": 0,
+      "name": "The Fool",
+      "_id": "4LcaPzmnfHe0kGbf",
+      "description": "The Fool is young and vulnerable. He has not yet experienced the ups and downs of life, leaving him unaware of the magnitude of life's challenges, as well as the potential he holds. When The Fool comes up in a Tarot reading, you are encouraged to take on his open, willing energy and embrace all that lies ahead of you without worry.",
+      "type": "base",
+      "system": {},
+      "value": 0,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 6,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Magician",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Magician"
+        }
+      ],
+      "face": 0,
+      "name": "The Magician",
+      "_id": "5ewfSGsROJ3hlGbc",
+      "description": "The Magician card is a reminder that you are unique and have many gifts. These skills set you apart from the crowd and can help you begin new projects or overcome adversity. When The Magician comes up in your Tarot reading, it's a reminder that you already hold everything you need to move forward and accomplish what you've set out to do.",
+      "type": "base",
+      "system": {},
+      "value": 1,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 13,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The High Priestess",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The High Priestess"
+        }
+      ],
+      "face": 0,
+      "name": "The High Priestess",
+      "_id": "Y9G0LlAMdv9vljBb",
+      "description": "The most intuitive, connected card in the whole Tarot deck, The High Priestess is a card of awareness. This card urges you to listen to your inner voice and follow your instincts. Your mind knows far more than you think. When this card arises in your Tarot reading, stop looking for answers in the outside world. Turn within for the guidance you seek.",
+      "type": "base",
+      "system": {},
+      "value": 2,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 4,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Empress",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Empress"
+        }
+      ],
+      "face": 0,
+      "name": "The Empress",
+      "_id": "wkyAufd5rKi00p9L",
+      "description": "The Empress is the most feminine card in the Tarot, and greatly encourages compassion, beauty, and love. She is deeply connected to Mother Nature, and her influence is powerful when you absorb the energy of the natural world around you.",
+      "type": "base",
+      "system": {},
+      "value": 3,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 15,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Emperor",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Emperor"
+        }
+      ],
+      "face": 0,
+      "name": "The Emperor",
+      "_id": "GUOhRXOKoJ3OVKIC",
+      "description": "The Emperor is a card of leadership and power. He is an authoritative force who has been through many experiences to achieve this status. He represents structure and solidity, and reminds you that you, too, hold immense amounts of power over your own life, and what happens to it.",
+      "type": "base",
+      "system": {},
+      "value": 4,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 19,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Hierophant",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Hierophant"
+        }
+      ],
+      "face": 0,
+      "name": "The Hierophant",
+      "_id": "V1G5A0qBO11XpxeV",
+      "description": "The Hierophant is like a messenger from the heavens. He is experienced in spirituality and guidance, and his job is to bring these lessons down to us here in the real world. When The Hierophant comes up in your Tarot reading, you're encouraged to follow the rules, and to find a spiritual perspective on your current situation.",
+      "type": "base",
+      "system": {},
+      "value": 5,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 21,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Lovers",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Lovers"
+        }
+      ],
+      "face": 0,
+      "name": "The Lovers",
+      "_id": "UwZGWjyULgISwC9M",
+      "description": "The Lovers card represents the close relationships in your life. If it comes up in your Tarot reading, your love life is in need of extra attention. However, this is just as much a card about your values and decisions. You may find The Lovers come up when you are at a crossroads. Consider all the possible consequences of your choices.",
+      "type": "base",
+      "system": {},
+      "value": 6,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 7,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Chariot",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Chariot"
+        }
+      ],
+      "face": 0,
+      "name": "The Chariot",
+      "_id": "ngIUCHzuBXdHiJrK",
+      "description": "The Chariot card is connected to your natural drive and determination, and can indicate an upcoming victory. This card reminds you that your greatest successes won't come through limited thinking -- when you combine the knowledge of your mind with that of your heart and spirit, you are an unstoppable force.",
+      "type": "base",
+      "system": {},
+      "value": 7,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 18,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "Strength",
+          "img": "icons/svg/card-joker.svg",
+          "text": "Strength"
+        }
+      ],
+      "face": 0,
+      "name": "Strength",
+      "_id": "I6DfnvuhanbxEfbQ",
+      "description": "The Strength card represents courage, the fortitude of your heart, and your ability to withstand anything life hands you. If this card arises in your Tarot reading, you are reminded that you're strong enough to handle whatever you are facing and will come out of it with even more power than you had before.",
+      "type": "base",
+      "system": {},
+      "value": 8,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 8,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Hermit",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Hermit"
+        }
+      ],
+      "face": 0,
+      "name": "The Hermit",
+      "_id": "ynHvlebWtqz7oxfD",
+      "description": "The Hermit yearns to be alone. He knows that the only way to process what is happening in life is to withdraw from the noise of the world and create a quiet space of solitude. When The Hermit comes up in your reading, the answers you need will come from within. Be very still, and listen...",
+      "type": "base",
+      "system": {},
+      "value": 9,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 12,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Wheel of Fortune",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Wheel of Fortune"
+        }
+      ],
+      "face": 0,
+      "name": "The Wheel of Fortune",
+      "_id": "ggoyhoE0ToFJZeCC",
+      "description": "The Wheel of Fortune is constantly revolving -- sometimes you will be at the top, and sometimes you will be at the bottom. This Tarot card reminds you that nothing is permanent, and, good or bad, you must cherish the lessons that this moment is bringing you.",
+      "type": "base",
+      "system": {},
+      "value": 10,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 10,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "Justice",
+          "img": "icons/svg/card-joker.svg",
+          "text": "Justice"
+        }
+      ],
+      "face": 0,
+      "name": "Justice",
+      "_id": "O3WajyhTODOJRiT6",
+      "description": "Justice is your firm-but-fair reminder that there is a consequence for every action. Whatever life is handing you at this moment comes from decisions you and others have made in the past, reflecting natural cause-and-effect. When this card comes up in your Tarot reading, make sure you are acting fairly in all your interactions with others.",
+      "type": "base",
+      "system": {},
+      "value": 11,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 9,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Hanged Man",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Hanged Man"
+        }
+      ],
+      "face": 0,
+      "name": "The Hanged Man",
+      "_id": "DHO0hYSry3C3tWZ9",
+      "description": "The Hanged Man tells you that sometimes small sacrifices are required to benefit the bigger picture. When The Hanged Man arises in your reading, you likely want to make a move but don't know where to begin. Lightening your grip on what's no longer working for you, or detaching from the outcome of your situation, can help you release yourself.",
+      "type": "base",
+      "system": {},
+      "value": 12,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 1,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "Death",
+          "img": "icons/svg/card-joker.svg",
+          "text": "Death"
+        }
+      ],
+      "face": 0,
+      "name": "Death",
+      "_id": "NwizDD1oM95JLIdB",
+      "description": "One of the most misunderstood Tarot cards, Death is not a card about physical death. The Death card speaks of cycles and is a reminder that all things must pass. Hanging on to situations from the past will hinder you from allowing new, better things to enter your life. In every ending lies a chance for a new beginning.",
+      "type": "base",
+      "system": {},
+      "value": 13,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 2,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "Temperance",
+          "img": "icons/svg/card-joker.svg",
+          "text": "Temperance"
+        }
+      ],
+      "face": 0,
+      "name": "Temperance",
+      "_id": "a8pXbH9Ox1mTwWQr",
+      "description": "The Temperance card is a master of moderation. She encourages peace and patience, and reminds you to go with the flow of your life instead of trying to force its pace or direction. When Temperance turns up in your Tarot reading, it is a message to take things as they come, and remain flexible enough to change with the changes.",
+      "type": "base",
+      "system": {},
+      "value": 14,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 17,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Devil",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Devil"
+        }
+      ],
+      "face": 0,
+      "name": "The Devil",
+      "_id": "MpiYfhEplXfdYjV6",
+      "description": "The Devil card carries themes of restraint and powerlessness. When it comes up in your Tarot reading, you are likely feeling stuck. The Devil has convinced you that you have no options, but this couldn't be further from the truth. You hold the keys to your own freedom, but it's up to you to open the lock.",
+      "type": "base",
+      "system": {},
+      "value": 15,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 5,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Tower",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Tower"
+        }
+      ],
+      "face": 0,
+      "name": "The Tower",
+      "_id": "aXltMUoE1mVoc5G0",
+      "description": "The Tower represents destruction. It often comes up when everything in your life feels like its crumbling, and you have no way of stopping it. The message of this card is to just let it fall. The weakest parts of your life must be torn down in order to build something strong and sturdy in their place.",
+      "type": "base",
+      "system": {},
+      "value": 16,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 20,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Star",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Star"
+        }
+      ],
+      "face": 0,
+      "name": "The Star",
+      "_id": "ImEtPzMrNtmSqsHw",
+      "description": "The Star is the embodiment of hope and healing. She is a calming influence that brings messages of renewal, optimism, and inspiration. When The Star comes up in your Tarot reading, she reminds you that the universe is working in your favor, and encourages you to have faith in where you are being taken.",
+      "type": "base",
+      "system": {},
+      "value": 17,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 0,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Moon",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Moon"
+        }
+      ],
+      "face": 0,
+      "name": "The Moon",
+      "_id": "RrFdbSYQf7TGuqFJ",
+      "description": "The Moon card represents hidden thoughts, feelings, doubts and fears. When The Moon arises in your Tarot reading, you may be allowing your fears to override your faith in the future. Don't be deceived -- you can't believe everything that you see, hear, or think. If you can draw your feelings to the surface and address them, you can rid yourself of worry.",
+      "type": "base",
+      "system": {},
+      "value": 18,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 14,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The Sun",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The Sun"
+        }
+      ],
+      "face": 0,
+      "name": "The Sun",
+      "_id": "Dn1SEDvwloEbcLlt",
+      "description": "The Sun is a powerfully uplifting card, representing happiness, joy, vitality, and optimism. When The Sun comes up in your Tarot reading, it is an positive sign that things are working well for you and that you're moving in the right direction. Lift your head and realize all the good situations and people that are surrounding you now and always.",
+      "type": "base",
+      "system": {},
+      "value": 19,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 3,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "Judgement",
+          "img": "icons/svg/card-joker.svg",
+          "text": "Judgement"
+        }
+      ],
+      "face": 0,
+      "name": "Judgement",
+      "_id": "93eHklnU6sW2tGWW",
+      "description": "Judgement is a card where your past and your future come together. You are being called on to review your decisions and your actions until now, to ensure they are in-line with where you ultimately want to go. The Judgement card reminds you that your future is not set in stone, and that it's never too late to make a change for the better.",
+      "type": "base",
+      "system": {},
+      "value": 20,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 16,
+      "flags": {},
+      "suit": ""
+    },
+    {
+      "faces": [
+        {
+          "name": "The World",
+          "img": "icons/svg/card-joker.svg",
+          "text": "The World"
+        }
+      ],
+      "face": 0,
+      "name": "The World",
+      "_id": "wDZIaUGock1Lsyyg",
+      "description": "As the last card of the Major Arcana, The World represents completion and fulfillment. When it arises in your Tarot Reading, you are exactly where you're meant to be. You have a greater understanding of who you are after all you've been through, and you're ready for the next phase of your journey.",
+      "type": "base",
+      "system": {},
+      "value": 21,
+      "back": {
+        "text": "",
+        "name": "",
+        "img": null
+      },
+      "drawn": false,
+      "origin": null,
+      "width": 832,
+      "height": 1216,
+      "rotation": 0,
+      "sort": 11,
+      "flags": {},
+      "suit": ""
+    }
+  ],
+  "width": 832,
+  "height": 1216,
+  "rotation": 0,
+  "displayCount": false,
+  "folder": null,
+  "flags": {
+    "exportSource": {
+      "world": "gurps4etester",
+      "system": "gurps",
+      "coreVersion": "11.308",
+      "systemVersion": "0.16.5"
+    }
+  },
+  "_stats": {
+    "systemId": "gurps",
+    "systemVersion": "0.16.5",
+    "coreVersion": "11.308",
+    "createdTime": 1693790314860,
+    "modifiedTime": 1693890684790,
+    "lastModifiedBy": "g6o4w3T9V9FtKPHN"
+  }
+}
