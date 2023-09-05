@@ -129,27 +129,70 @@ Hooks.on(
         if (createdOuter.length > 0) {
           for (let index = 0; index < createdOuter.length; index++) {
             const createdInner = createdOuter[index] as CardDataConstructorData;
+            console.log(`-------------createdInner--------`);
+            console.log(createdInner);
 
-            //if face is null, that means the card is dealt face down
-            if (
-              createdInner.face != null &&
-              createdInner.faces != null &&
-              createdInner.faces.length > 0
-            ) {
-              let img =
-                createdInner.faces[0].img != null
-                  ? createdInner.faces[0].img
-                  : "";
-
-              // Construct the Application instance
-              const ip = new ImagePopout(img);
-
-              // Display the image popout
-              ip.render(true);
-
-              // Share the image with other connected players
-              ip.shareImage();
+            //early exit
+            if (createdInner.faces == null || createdInner.faces.length <= 0) {
+              continue;
             }
+
+            if (createdInner.back == null) {
+              continue;
+            }
+
+            //chose our image
+            let faceImage = createdInner.faces[0].img
+              ? createdInner.faces[0].img
+              : "";
+            let backImage = createdInner.back.img ? createdInner.back.img : "";
+
+            let isFaceDown = createdInner.face == null ? true : false;
+
+            let img = isFaceDown ? backImage : faceImage;
+
+            console.log(
+              `face image is ${faceImage}, back image is ${backImage}, isfaceDown is ${isFaceDown}, img is ${img}`
+            );
+
+            let d = new Dialog(
+              {
+                title: `${createdInner.faces[0].name}`,
+                content: `
+                          <form class="flexcol">
+                            <div class="form-group">                              
+                              <img src=${img}></img>
+                            </div>    
+                            <div class="form-group">                              
+                              <p>${createdInner.description}</p>
+                            </div>                            
+                          </form>
+                          `,
+                buttons: {
+                  // one: {
+                  //   icon: '<i class="fas fa-check"></i>',
+                  //   label: "Close",
+                  //   callback: () => console.log("Chose One"),
+                  // },
+                },
+                //default: "two",
+                close: () => console.log("Closed window!"),
+              },
+              {
+                width: createdInner.width ? 600 : createdInner.width,
+                height: createdInner.height ? 800 : createdInner.height,
+              }
+            );
+            d.render(true);
+
+            // // Construct the Application instance
+            // const ip = new ImagePopout(img);
+
+            // // Display the image popout
+            // ip.render(true);
+
+            // // Share the image with other connected players
+            // ip.shareImage();
           }
         }
       }
