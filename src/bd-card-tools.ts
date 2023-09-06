@@ -21,6 +21,9 @@ import { CardDataConstructorData } from "@league-of-foundry-developers/foundry-v
 
 declare global {}
 
+export const MODULE_NAME = `bd-card-tools`;
+export const MODULE_TYPE = `module`;
+
 export function getGame(): Game {
   if (!(game instanceof Game)) {
     throw new Error("game is not initialized yet!");
@@ -35,28 +38,44 @@ export function getCanvas(): Canvas {
   return canvas;
 }
 
-export function popOutCard(title: string) {
-  let d = new Dialog({
-    title: "Test Dialog",
-    content: "<p>You must choose either Option 1, or Option 2</p>",
-    buttons: {
-      one: {
-        icon: '<i class="fas fa-check"></i>',
-        label: "Option One",
-        callback: () => console.log("Chose One"),
+export function popOutCard(
+  title: string,
+  img: string,
+  description: string,
+  width: number,
+  height: number
+) {
+  let d = new Dialog(
+    {
+      title: title,
+      content: `
+                <form class="flexcol">
+                  <div class="form-group">                              
+                    <img src=${img}></img>
+                  </div>    
+                  <div class="form-group">                              
+                    <p>${description}</p>
+                  </div>                            
+                </form>
+                `,
+      buttons: {
+        one: {
+          icon: '<i class="fas fa-check"></i>',
+          label: "Flip",
+          callback: () => {
+            //flip front to back*********************
+            d.render(true);
+          },
+        },
       },
-      two: {
-        icon: '<i class="fas fa-times"></i>',
-        label: "Option Two",
-        callback: () => console.log("Chose Two"),
-      },
+      //default: "two",
+      close: () => console.log("Closed window!"),
     },
-    default: "two",
-    render: (html) =>
-      console.log("Register interactivity in the rendered dialog"),
-    close: (html) =>
-      console.log("This always is logged no matter which option is chosen"),
-  });
+    {
+      width: width,
+      height: height,
+    }
+  );
   d.render(true);
 }
 
@@ -88,7 +107,20 @@ Hooks.once("setup", function () {
 /* ------------------------------------ */
 /* When ready							*/
 /* ------------------------------------ */
-Hooks.once("ready", function () {});
+Hooks.once("ready", function () {
+  getGame().socket?.on(
+    MODULE_TYPE + "." + MODULE_NAME,
+    (data: {
+      title: string;
+      img: string;
+      description: string;
+      width: number;
+      height: number;
+    }) => {
+      handleSocketEvent(data);
+    }
+  );
+});
 
 Hooks.on(
   "dealCards",
@@ -102,29 +134,9 @@ Hooks.on(
       fromDelete: any[];
     }
   ) => {
-    // console.log(`origin is: `);
-    // console.log(origin);
-    // console.log(`destinations are: `);
-    // console.log(destinations);
-
-    for (let index = 0; index < destinations.length; index++) {
-      const element = destinations[index];
-
-      //   console.log(`destination is: `);
-      //   console.log(element);
-      //   console.log(`desintation cards is: `);
-      //   console.log(element.cards);
-    }
-
-    console.log(
-      "-------------Create an image pop up of the first face of each dealt card if not face down--------"
-    );
-
     if (context.toCreate.length > 0) {
       for (let index = 0; index < context.toCreate.length; index++) {
         const createdOuter = context.toCreate[index];
-        // console.log(`-------------createOuter${index}--------`);
-        // console.log(context.toCreate);
 
         if (createdOuter.length > 0) {
           for (let index = 0; index < createdOuter.length; index++) {
@@ -142,62 +154,70 @@ Hooks.on(
             }
 
             //chose our image
-            let faceImage = createdInner.faces[0].img
+            const faceImage = createdInner.faces[0].img
               ? createdInner.faces[0].img
               : "";
-            let backImage = createdInner.back.img ? createdInner.back.img : "";
+            const backImage = createdInner.back.img
+              ? createdInner.back.img
+              : "";
 
-            let isFaceDown = createdInner.face == null ? true : false;
+            const isFaceDown = createdInner.face == null ? true : false;
 
-            let img = isFaceDown ? backImage : faceImage;
+            const title =
+              createdInner.faces[0].name != null
+                ? createdInner.faces[0].name
+                : "";
+            const description =
+              createdInner.description != null ? createdInner.description : "";
+            const img = isFaceDown ? backImage : faceImage;
+            const width = createdInner.width == null ? 600 : createdInner.width;
+            const height =
+              createdInner.height == null ? 800 : createdInner.height;
 
-            console.log(
-              `face image is ${faceImage}, back image is ${backImage}, isfaceDown is ${isFaceDown}, img is ${img}`
-            );
+            new Promise((resolve) => {
+              // This is the acknowledgement callback
+              const ackCb = (response) => {
+                console.log(`socket emit started`);
+                //handleSocketEvent(response);
+                resolve(response);
+              };
 
-            let d = new Dialog(
-              {
-                title: `${createdInner.faces[0].name}`,
-                content: `
-                          <form class="flexcol">
-                            <div class="form-group">                              
-                              <img src=${img}></img>
-                            </div>    
-                            <div class="form-group">                              
-                              <p>${createdInner.description}</p>
-                            </div>                            
-                          </form>
-                          `,
-                buttons: {
-                  // one: {
-                  //   icon: '<i class="fas fa-check"></i>',
-                  //   label: "Close",
-                  //   callback: () => console.log("Chose One"),
-                  // },
+              console.log(
+                `-----------socket emit for ${
+                  MODULE_TYPE + "." + MODULE_NAME
+                }-----------`
+              );
+
+              //Emit the data to everyone!
+              getGame().socket?.emit(
+                MODULE_TYPE + "." + MODULE_NAME,
+                {
+                  title: title,
+                  img: img,
+                  description: description,
+                  width: width,
+                  height: height,
                 },
-                //default: "two",
-                close: () => console.log("Closed window!"),
-              },
-              {
-                width: createdInner.width ? 600 : createdInner.width,
-                height: createdInner.height ? 800 : createdInner.height,
-              }
-            );
-            d.render(true);
-
-            // // Construct the Application instance
-            // const ip = new ImagePopout(img);
-
-            // // Display the image popout
-            // ip.render(true);
-
-            // // Share the image with other connected players
-            // ip.shareImage();
+                ackCb
+              );
+            });
           }
         }
       }
     }
     console.log(context);
-    //const ip = new ImagePopout(origin.th);
   }
 );
+
+//SOCKET STUFF!
+export function handleSocketEvent(data: {
+  title: string;
+  img: string;
+  description: string;
+  width: number;
+  height: number;
+}) {
+  popOutCard(data.title, data.img, data.description, data.width, data.height);
+  console.log(`-----------handle socket event called---------------`);
+  console.log(data.title, data.img, data.description, data.width, data.height); // expected 'Foo'
+}

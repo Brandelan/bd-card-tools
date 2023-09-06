@@ -10,9 +10,10 @@
   "readme": "https://github.com/Brandelan/bd-card-tools/blob/master/README.md",
   "minimumCoreVersion": "10.282",
   "compatibleCoreVersion": "10",
+  "socket": true,
   "compatibility": {
     "minimum": "10.282",
-    "verified": 10,
+    "verified": 11,
     "maximum": 11
   },
   "author": "Delandelon",
