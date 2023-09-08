@@ -18,11 +18,26 @@ https://github.com/League-of-Foundry-Developers/foundry-vtt-types/wiki/FAQ
 import { registerSettings } from "./module/settings";
 import { preloadTemplates } from "./module/preloadTemplates";
 import { CardDataConstructorData } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/cardData";
+import { CardData, CardToolsUI, UIOptions } from "./module/ui/bd-card-tools-ui";
+import chalk from "chalk";
 
-declare global {}
+declare global {
+  interface Window {
+    CardToolsUI: FormApplication<UIOptions, CardData>;
+  }
+}
 
 export const MODULE_NAME = `bd-card-tools`;
 export const MODULE_TYPE = `module`;
+
+export class CardTools {
+  static ID = `bd-card-tools`;
+  static DIR = `modules/${CardTools.ID}`;
+  static TEMPLATES = {
+    HBS: `modules/${CardTools.ID}/templates/bd-card-tools.hbs`,
+    HTML: `modules/${CardTools.ID}/templates/bd-card-tools.html`,
+  };
+}
 
 export function getGame(): Game {
   if (!(game instanceof Game)) {
@@ -36,6 +51,29 @@ export function getCanvas(): Canvas {
     throw new Error("game is not initialized yet!");
   }
   return canvas;
+}
+
+export async function openUI(
+  title: string,
+  img: string,
+  description: string,
+  width: number,
+  height: number
+) {
+  console.log(
+    chalk.blue(
+      `Generate Card with title: ${title}, img path ${img}, and description ${description}`
+    )
+  );
+  window.CardToolsUI = new CardToolsUI(
+    {
+      title: title,
+      img: img,
+      desc: description,
+    },
+    {}
+  );
+  await window.CardToolsUI.render(true);
 }
 
 export function popOutCard(
@@ -122,102 +160,124 @@ Hooks.once("ready", function () {
   );
 });
 
-Hooks.on(
-  "dealCards",
-  (
-    origin: Cards,
-    destinations: Cards[],
-    context: {
-      action: string;
-      toCreate: any[][];
-      fromUpdate: any[];
-      fromDelete: any[];
-    }
-  ) => {
-    if (context.toCreate.length > 0) {
-      for (let index = 0; index < context.toCreate.length; index++) {
-        const createdOuter = context.toCreate[index];
+/*
+ * hook on Dealing Cards
+ */
+Hooks.on("dealCards", eventToAll);
 
-        if (createdOuter.length > 0) {
-          for (let index = 0; index < createdOuter.length; index++) {
-            const createdInner = createdOuter[index] as CardDataConstructorData;
-            console.log(`-------------createdInner--------`);
-            console.log(createdInner);
+/*
+ * Helper functions
+ */
 
-            //early exit
-            if (createdInner.faces == null || createdInner.faces.length <= 0) {
-              continue;
-            }
+/**
+ * Send our card event to everyone connected including sender
+ * @param origin the card deck being dealt from
+ * @param destinations the destination deck/stack/pile
+ * @param context the creation data for the card being dealt
+ */
+export function eventToAll(
+  origin: Cards,
+  destinations: Cards[],
+  context: {
+    action: string;
+    toCreate: any[][];
+    fromUpdate: any[];
+    fromDelete: any[];
+  }
+) {
+  if (context.toCreate.length > 0) {
+    for (let index = 0; index < context.toCreate.length; index++) {
+      const createdOuter = context.toCreate[index];
 
-            if (createdInner.back == null) {
-              continue;
-            }
+      if (createdOuter.length > 0) {
+        for (let index = 0; index < createdOuter.length; index++) {
+          const createdInner = createdOuter[index] as CardDataConstructorData;
+          console.log(`-------------createdInner--------`);
+          console.log(createdInner);
 
-            //chose our image
-            const faceImage = createdInner.faces[0].img
-              ? createdInner.faces[0].img
-              : "";
-            const backImage = createdInner.back.img
-              ? createdInner.back.img
-              : "";
-
-            const isFaceDown = createdInner.face == null ? true : false;
-
-            const title =
-              createdInner.faces[0].name != null
-                ? createdInner.faces[0].name
-                : "";
-            const description =
-              createdInner.description != null ? createdInner.description : "";
-            const img = isFaceDown ? backImage : faceImage;
-            const width = createdInner.width == null ? 600 : createdInner.width;
-            const height =
-              createdInner.height == null ? 800 : createdInner.height;
-
-            new Promise((resolve) => {
-              // This is the acknowledgement callback
-              const ackCb = (response) => {
-                console.log(`socket emit started`);
-                //handleSocketEvent(response);
-                resolve(response);
-              };
-
-              console.log(
-                `-----------socket emit for ${
-                  MODULE_TYPE + "." + MODULE_NAME
-                }-----------`
-              );
-
-              //Emit the data to everyone!
-              getGame().socket?.emit(
-                MODULE_TYPE + "." + MODULE_NAME,
-                {
-                  title: title,
-                  img: img,
-                  description: description,
-                  width: width,
-                  height: height,
-                },
-                ackCb
-              );
-            });
+          //early exit
+          if (createdInner.faces == null || createdInner.faces.length <= 0) {
+            continue;
           }
+
+          if (createdInner.back == null) {
+            continue;
+          }
+
+          //chose our image
+          const faceImage = createdInner.faces[0].img
+            ? createdInner.faces[0].img
+            : "";
+          const backImage = createdInner.back.img ? createdInner.back.img : "";
+
+          const isFaceDown = createdInner.face == null ? true : false;
+
+          const title =
+            createdInner.faces[0].name != null
+              ? createdInner.faces[0].name
+              : "";
+          const description =
+            createdInner.description != null ? createdInner.description : "";
+          const img = isFaceDown ? backImage : faceImage;
+          const width = createdInner.width == null ? 600 : createdInner.width;
+          const height =
+            createdInner.height == null ? 800 : createdInner.height;
+
+          new Promise((resolve) => {
+            // This is the acknowledgement callback
+            const ackCb = (response) => {
+              console.log(`socket emit started`);
+              resolve(response);
+            };
+
+            console.log(
+              `-----------socket emit for ${
+                MODULE_TYPE + "." + MODULE_NAME
+              }-----------`
+            );
+
+            //Emit the data to everyone!
+            getGame().socket?.emit(
+              MODULE_TYPE + "." + MODULE_NAME,
+              {
+                title: title,
+                img: img,
+                description: description,
+                width: width,
+                height: height,
+              },
+              ackCb
+            );
+
+            //send the window to the instigator as well
+            handleSocketEvent({
+              title: title,
+              img: img,
+              description: description,
+              width: width,
+              height: height,
+            });
+          });
         }
       }
     }
-    console.log(context);
   }
-);
+  console.log(context);
+}
 
-//SOCKET STUFF!
-export function handleSocketEvent(data: {
+/**
+ *
+ * @param data the card creation data
+ */
+export async function handleSocketEvent(data: {
   title: string;
   img: string;
   description: string;
   width: number;
   height: number;
 }) {
-  popOutCard(data.title, data.img, data.description, data.width, data.height);
+  //popOutCard(data.title, data.img, data.description, data.width, data.height);
+  await openUI(data.title, data.img, data.description, data.width, data.height);
   console.log(`-----------handle socket event called---------------`);
   console.log(data.title, data.img, data.description, data.width, data.height); // expected 'Foo'
 }
