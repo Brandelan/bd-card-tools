@@ -3,3 +3,4 @@ foundryconfig.json
 types
 dist
 src/module/lib
+src/lib
