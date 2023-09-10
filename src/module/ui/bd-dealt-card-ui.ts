@@ -1,4 +1,5 @@
-import { CardTools, flipCard } from "../../bd-card-tools";
+import { CardToolConstants } from "../../bd-card-tools";
+import { flipCard } from "../card-launch-ui";
 const chalk = require("chalk");
 
 export interface CardData {
@@ -24,7 +25,7 @@ export interface UIOptions extends FormApplicationOptions {
   closeOnSubmit: boolean;
 }
 
-export class CardToolsUI extends FormApplication<UIOptions, any, CardData> {
+export class DealtCardUI extends FormApplication<UIOptions, any, CardData> {
   debug: boolean = false;
 
   /**
@@ -37,10 +38,10 @@ export class CardToolsUI extends FormApplication<UIOptions, any, CardData> {
     return mergeObject(super.defaultOptions, {
       classes: ["form"],
       popOut: true,
-      width: 576,
-      // height: 640,
-      template: CardTools.TEMPLATES.HBS,
-      id: CardTools.ID,
+      width: 640,
+      height: 1024,
+      template: CardToolConstants.TEMPLATES.HBS,
+      id: CardToolConstants.ID,
       title: "Tarot Card",
       closeOnSubmit: false,
       resizable: true,

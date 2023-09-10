@@ -1,25 +1,28 @@
-<form class="editable flexcol" autocomplete="off">
+<form autocomplete="off">
   <!-- Link must be relative to the foundry project -->
   <link
     rel="stylesheet"
     href="modules/bd-card-tools/templates/bd-card-tools.css"
     type="text/css"
   />
-  <section class="flex1 title" >
-    <p>{{title}}</p>
-  </section>
-  <section class="flex3">
-    <div id="tarotDisplay" class = "center">
+  <div class = "wrapper">
+    <div class="title">
+      <p>{{title}}</p>
+    </div>
+    <div class="center-fit center">
       <img id="tarotImg" class = "center-fit" src = {{img}}></img>
     </div>
-  </section>
-  <section class="flex1 description" ><p>{{desc}}</p></section>
-  <footer id="mapFooter" class="flex0">
-    <button type="button" name="flip" class="buttons">
-      <i class="fa fa-check"></i>
-      Flip Card
-    </button>      
-  </footer>
+    <div class="description">
+      <p>{{desc}}</p>
+    </div>
+    <div id="buttons" class="buttons">
+      <button type="button" name="flip" class="buttons">
+        <i class="fa fa-check"></i>
+        Flip Card
+      </button>      
+    </div>
+  </div>
+  
 </form>
 
 

@@ -1,0 +1,40 @@
+<form class="editable flexcol" autocomplete="off">
+  <!-- Link must be relative to the foundry project -->
+  <link
+    rel="stylesheet"
+    href="modules/bd-card-tools/templates/bd-card-tools.css"
+    type="text/css"
+  />
+  <div>
+    <label for="decks">Choose Deck!</label>
+    <select name="decks">
+      {{{decks}}}
+    </select>
+  </div>
+  <div>
+    <label for="discards">Choose Discard Pile!</label>
+    <select name="discards">
+      {{{discards}}}
+    </select>
+  </div>
+  <div>
+    <label for="display">Display Dealt Card?</label>
+    <input
+      type="checkbox"
+      id="display"
+      name="display"
+      value="display"
+      checked
+    />
+  </div>
+  <footer id="footer" class="sheet-footer flexcol">
+    <button type="button" name="deal" class="buttons">
+      <i class="fa fa-check"></i>
+      Deal Cards
+    </button>
+    <button type="reset" name="reset" class="buttons">
+      <i class="fa fa-check"></i>
+      Reset Decks
+    </button>
+  </footer>
+</form>
