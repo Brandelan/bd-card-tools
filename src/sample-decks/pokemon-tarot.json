@@ -9,7 +9,7 @@
       "faces": [
         {
           "name": "The Fool",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/00_fool.png",
           "text": "The Fool"
         }
       ],
@@ -23,7 +23,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -38,7 +38,7 @@
       "faces": [
         {
           "name": "The Magician",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/01_magician.png",
           "text": "The Magician"
         }
       ],
@@ -52,7 +52,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -67,7 +67,7 @@
       "faces": [
         {
           "name": "The High Priestess",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/02_highpriestess.png",
           "text": "The High Priestess"
         }
       ],
@@ -81,7 +81,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -96,7 +96,7 @@
       "faces": [
         {
           "name": "The Empress",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/03_empress.png",
           "text": "The Empress"
         }
       ],
@@ -110,7 +110,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -125,7 +125,7 @@
       "faces": [
         {
           "name": "The Emperor",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/04_emperor.png",
           "text": "The Emperor"
         }
       ],
@@ -139,7 +139,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -154,7 +154,7 @@
       "faces": [
         {
           "name": "The Hierophant",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/05_hierophant.png",
           "text": "The Hierophant"
         }
       ],
@@ -168,7 +168,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -183,7 +183,7 @@
       "faces": [
         {
           "name": "The Lovers",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/06_lovers.png",
           "text": "The Lovers"
         }
       ],
@@ -197,7 +197,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -212,7 +212,7 @@
       "faces": [
         {
           "name": "The Chariot",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/07_chariot.png",
           "text": "The Chariot"
         }
       ],
@@ -226,7 +226,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -241,7 +241,7 @@
       "faces": [
         {
           "name": "Strength",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/11_strength.png",
           "text": "Strength"
         }
       ],
@@ -251,11 +251,11 @@
       "description": "The Strength card represents courage, the fortitude of your heart, and your ability to withstand anything life hands you. If this card arises in your Tarot reading, you are reminded that you're strong enough to handle whatever you are facing and will come out of it with even more power than you had before.",
       "type": "base",
       "system": {},
-      "value": 8,
+      "value": 11,
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -270,7 +270,7 @@
       "faces": [
         {
           "name": "The Hermit",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/09_hermit.png",
           "text": "The Hermit"
         }
       ],
@@ -284,7 +284,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -299,7 +299,7 @@
       "faces": [
         {
           "name": "The Wheel of Fortune",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/10_wheeloffortune.png",
           "text": "The Wheel of Fortune"
         }
       ],
@@ -313,7 +313,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -328,7 +328,7 @@
       "faces": [
         {
           "name": "Justice",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/08_justice.png",
           "text": "Justice"
         }
       ],
@@ -338,11 +338,11 @@
       "description": "Justice is your firm-but-fair reminder that there is a consequence for every action. Whatever life is handing you at this moment comes from decisions you and others have made in the past, reflecting natural cause-and-effect. When this card comes up in your Tarot reading, make sure you are acting fairly in all your interactions with others.",
       "type": "base",
       "system": {},
-      "value": 11,
+      "value": 8,
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -357,7 +357,7 @@
       "faces": [
         {
           "name": "The Hanged Man",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/12_hangedman.png",
           "text": "The Hanged Man"
         }
       ],
@@ -371,7 +371,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -386,7 +386,7 @@
       "faces": [
         {
           "name": "Death",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/13_death.png",
           "text": "Death"
         }
       ],
@@ -400,7 +400,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -415,7 +415,7 @@
       "faces": [
         {
           "name": "Temperance",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/14_temperance.png",
           "text": "Temperance"
         }
       ],
@@ -429,7 +429,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -444,7 +444,7 @@
       "faces": [
         {
           "name": "The Devil",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/15_devil.png",
           "text": "The Devil"
         }
       ],
@@ -458,9 +458,9 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
-      "drawn": false,
+      "drawn": true,
       "origin": null,
       "width": 832,
       "height": 1216,
@@ -473,7 +473,7 @@
       "faces": [
         {
           "name": "The Tower",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/16_tower.png",
           "text": "The Tower"
         }
       ],
@@ -487,7 +487,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -502,7 +502,7 @@
       "faces": [
         {
           "name": "The Star",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/17_star.png",
           "text": "The Star"
         }
       ],
@@ -516,7 +516,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -531,7 +531,7 @@
       "faces": [
         {
           "name": "The Moon",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/18_moon.png",
           "text": "The Moon"
         }
       ],
@@ -545,7 +545,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -560,7 +560,7 @@
       "faces": [
         {
           "name": "The Sun",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/19_sun.png",
           "text": "The Sun"
         }
       ],
@@ -574,7 +574,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -589,7 +589,7 @@
       "faces": [
         {
           "name": "Judgement",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/20_judgement.png",
           "text": "Judgement"
         }
       ],
@@ -603,7 +603,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -618,7 +618,7 @@
       "faces": [
         {
           "name": "The World",
-          "img": "icons/svg/card-joker.svg",
+          "img": "images/cards/tarot/pokemon/21_world.png",
           "text": "The World"
         }
       ],
@@ -632,7 +632,7 @@
       "back": {
         "text": "",
         "name": "",
-        "img": null
+        "img": "images/cards/tarot/pokemon/back_00.png"
       },
       "drawn": false,
       "origin": null,
@@ -662,7 +662,7 @@
     "systemVersion": "0.16.5",
     "coreVersion": "11.308",
     "createdTime": 1693790314860,
-    "modifiedTime": 1693890684790,
+    "modifiedTime": 1694379463230,
     "lastModifiedBy": "g6o4w3T9V9FtKPHN"
   }
 }
