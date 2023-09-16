@@ -530,6 +530,8 @@ function updateManifest(cb) {
     const currentVersion = manifest.file.version;
     let targetVersion = "";
 
+    console.log(argv.u);
+
     if (!version) {
       cb(Error("Missing version number"));
     }

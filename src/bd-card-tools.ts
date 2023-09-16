@@ -18,21 +18,20 @@ https://github.com/League-of-Foundry-Developers/foundry-vtt-types/wiki/FAQ
 import { registerSettings } from "./module/settings";
 import { preloadTemplates } from "./module/preloadTemplates";
 import { CardDataConstructorData } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/cardData";
-import { CardData, DealtCardUI, UIOptions } from "./module/ui/bd-dealt-card-ui";
+import { DealtCardPlayerUI } from "./module/ui/bd-dealt-card-player-ui";
 import chalk from "chalk";
-import {
-  handleSocketEvent,
-  sendCardDisplayToAll,
-} from "./module/card-launch-ui";
+import { handleSocketEvent, sendCardToGM } from "./module/card-launch-ui";
 import { CardFuncs } from "./module/card-funcs";
 import { DealersUI } from "./module/ui/bd-dealers-ui";
+import { DealtCardGMUI } from "./module/ui/bd-dealt-card-gm-ui";
 
 declare global {
   interface Window {
-    CardToolsUI: DealtCardUI;
+    CardToolsUI: DealtCardPlayerUI;
+    GMCardToolsUI: DealtCardGMUI;
     DealUI: DealersUI;
     DisplayDealt: boolean;
-    LaunchUI: () => {};
+    LaunchGMCardUI: () => {};
   }
 }
 
@@ -41,11 +40,14 @@ export const MODULE_TYPE = `module`;
 
 export class CardToolConstants {
   static ID = `bd-card-tools`;
+  static UI_ID_GM = `bd-card-ui-gm`;
+  static UI_ID_PLAYER = `bd-card-ui-player`;
   static DEAL_UI_ID = `deal-ui`;
   static DIR = `modules/${CardToolConstants.ID}`;
   static TEMPLATES = {
     DEAL_HBS: `modules/${CardToolConstants.ID}/templates/bd-deal.hbs`,
-    HBS: `modules/${CardToolConstants.ID}/templates/bd-card-tools.hbs`,
+    PLAYER_HBS: `modules/${CardToolConstants.ID}/templates/bd-card-ui-player.hbs`,
+    GM_HBS: `modules/${CardToolConstants.ID}/templates/bd-card-ui-gm.hbs`,
     HTML: `modules/${CardToolConstants.ID}/templates/bd-card-tools.html`,
   };
 }
@@ -71,7 +73,7 @@ Hooks.once("init", async function () {
   console.log("bd-card-tools | Initializing bd-card-tools");
 
   // Assign custom classes and constants here
-  window.LaunchUI = CardFuncs.launchDealingUI;
+  window.LaunchGMCardUI = CardFuncs.launchGMCardUI;
 
   // Register custom module settings
   registerSettings();
@@ -123,7 +125,7 @@ Hooks.once("ready", function () {
 /*
  * hook on Dealing Cards
  */
-Hooks.on("dealCards", sendCardDisplayToAll);
+Hooks.on("dealCards", sendCardToGM);
 
 /*
  * Helper functions

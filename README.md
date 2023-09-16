@@ -1,5 +1,13 @@
 # bd-card-tools
 
+## Run
+
+Execute with a script macro using this function:
+
+```
+window.LaunchGMCardUI()
+```
+
 ## Installation and Building
 
 **Gulp Commands**: To do various build tasks via gulp, execute the following commands (configurations are in foundryconfig.json):

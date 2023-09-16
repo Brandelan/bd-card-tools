@@ -47,7 +47,7 @@ export abstract class CardFuncs {
    * Public hook to launch our dealing UI, only GMs can do this
    * @returns
    */
-  public static async launchDealingUI() {
+  public static async launchGMCardUI() {
     //Only the GM can flip the card!
     if (!getGame()?.user?.isGM) return;
 
