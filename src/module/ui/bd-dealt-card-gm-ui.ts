@@ -1,4 +1,4 @@
-import { CardToolConstants } from "../../bd-card-tools";
+import { CardToolConstants, getGame } from "../../bd-card-tools";
 import { dealToPlayers, flipCard } from "../card-launch-ui";
 const chalk = require("chalk");
 
@@ -38,8 +38,8 @@ export class DealtCardGMUI extends FormApplication<UIOptions, any, CardData> {
     return mergeObject(super.defaultOptions, {
       classes: ["form"],
       popOut: true,
-      width: 640,
-      height: 840,
+      width: 655,
+      height: 850,
       template: CardToolConstants.TEMPLATES.GM_HBS,
       id: CardToolConstants.UI_ID_GM,
       title: "Tarot Card",
@@ -112,6 +112,25 @@ export class DealtCardGMUI extends FormApplication<UIOptions, any, CardData> {
     console.log("deal to players:");
     console.log(data);
     dealToPlayers(data);
+
+    let chatMessage = `Dealt Card: <br> ${data.title}`;
+
+    let cm = `
+    <table style="text-align:center">
+      <tr><td>Dealt Card:</td></tr>
+      <tr><th>${data.title}</th></tr>
+      <tr><td><img src=${data.img}></img></td></tr>
+    </table>
+    `;
+    let chatData = {
+      user: getGame()?.user?.id,
+      speaker: ChatMessage.getSpeaker(),
+      content: cm,
+      // whisper: getGame()
+      //   ?.users?.filter((u) => u.isGM)
+      //   .map((u) => u.id),
+    };
+    ChatMessage.create(chatData, {});
   }
 
   /* -------------------------------------------- */

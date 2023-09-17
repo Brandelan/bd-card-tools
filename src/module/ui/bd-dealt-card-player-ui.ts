@@ -42,8 +42,8 @@ export class DealtCardPlayerUI extends FormApplication<
     return mergeObject(super.defaultOptions, {
       classes: ["form"],
       popOut: true,
-      width: 640,
-      height: 840,
+      width: 655,
+      height: 850,
       template: CardToolConstants.TEMPLATES.PLAYER_HBS,
       id: CardToolConstants.UI_ID_PLAYER,
       title: "Tarot Card",
