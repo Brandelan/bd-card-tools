@@ -113,8 +113,6 @@ export class DealtCardGMUI extends FormApplication<UIOptions, any, CardData> {
     console.log(data);
     dealToPlayers(data);
 
-    let chatMessage = `Dealt Card: <br> ${data.title}`;
-
     let cm = `
     <table style="text-align:center">
       <tr><td>Dealt Card:</td></tr>
@@ -131,6 +129,23 @@ export class DealtCardGMUI extends FormApplication<UIOptions, any, CardData> {
       //   .map((u) => u.id),
     };
     ChatMessage.create(chatData, {});
+
+    //************whisper description to gm**************
+    let whisperDesc = `
+    <table style="text-align:center">
+      <tr><th>${data.title} Description</th></tr>
+      <tr><td>${data.desc}</td></tr>
+    </table>
+    `;
+    let whsiperData = {
+      user: getGame()?.user?.id,
+      speaker: ChatMessage.getSpeaker(),
+      content: whisperDesc,
+      whisper: getGame()
+        ?.users?.filter((u) => u.isGM)
+        .map((u) => u.id),
+    };
+    ChatMessage.create(whsiperData, {});
   }
 
   /* -------------------------------------------- */
