@@ -630,7 +630,7 @@ function gitTag() {
   );
 }
 
-const execGit = gulp.series(gitAdd, gitCommit); //, gitTag);
+const execGit = gulp.series(gitAdd, gitCommit, gitTag);
 
 const execBuild = gulp.parallel(
   buildJS,

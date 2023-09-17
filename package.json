@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "bd-card-tools",
-	"version": "0.1.2",
+	"version": "0.1.1",
 	"description": "A simple UI to deal a card to and show the GM then the players",
 	"scripts": {
 		"postinstall": "patch-package",
