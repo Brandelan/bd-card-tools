@@ -1,6 +1,8 @@
+import { CardsData } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs";
 import { CardToolConstants, getGame } from "../../bd-card-tools";
 import { CardFuncs } from "../card-funcs";
 import { flipCard } from "../card-launch-ui";
+import { BaseCards } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs";
 const chalk = require("chalk");
 
 export interface DealersData {
@@ -137,6 +139,7 @@ export class DealersUI extends FormApplication<UIOptions, any, DealersData> {
 
     const deck_ret = await deck_actual.deal([discard_actual], 1, {
       how: foundry.CONST.CARD_DRAW_MODES.RANDOM,
+      chatNotification: false,
     });
   }
 
