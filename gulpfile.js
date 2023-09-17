@@ -620,7 +620,7 @@ function gitCommit() {
 
 function gitTag() {
   const manifest = getManifest();
-  console.log(manifest);
+  console.log(`v${manifest.file.version}`);
   return git.tag(
     `v${manifest.file.version}`,
     `Updated to ${manifest.file.version}`,
