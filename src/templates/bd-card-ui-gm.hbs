@@ -1,0 +1,38 @@
+<form autocomplete="off">
+  <!-- Link must be relative to the foundry project -->
+  <link
+    rel="stylesheet"
+    href="modules/bd-card-tools/templates/bd-card-tools.css"
+    type="text/css"
+  />
+  <div class = "wrapper">
+    <div class="title">
+      <p>{{title}}</p>
+    </div>
+    <div class="center-fit center">
+      <img id="tarotImg" class = "center-fit" src = {{img}}></img>
+    </div>
+    <div class="description">
+      <p>{{desc}}</p>
+    </div>
+    <div>
+      <div id="buttons" class="buttons">
+        <button type="button" name="dealToPlayers" class="buttons">
+          <i class="fa fa-check"></i>
+          Show Card To Players
+        </button>      
+      </div>
+      {{!-- <div id="buttons" class="buttons">
+        <button type="button" name="flip" class="buttons">
+          <i class="fa fa-check"></i>
+          Flip Card
+        </button>      
+      </div> --}}
+    </div>
+    
+    
+  </div>
+  
+</form>
+
+
