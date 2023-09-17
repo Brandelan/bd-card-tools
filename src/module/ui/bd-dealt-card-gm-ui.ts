@@ -39,7 +39,7 @@ export class DealtCardGMUI extends FormApplication<UIOptions, any, CardData> {
       classes: ["form"],
       popOut: true,
       width: 640,
-      height: 800,
+      height: 840,
       template: CardToolConstants.TEMPLATES.GM_HBS,
       id: CardToolConstants.UI_ID_GM,
       title: "Tarot Card",

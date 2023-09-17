@@ -43,12 +43,12 @@ export class DealtCardPlayerUI extends FormApplication<
       classes: ["form"],
       popOut: true,
       width: 640,
-      height: 800,
+      height: 840,
       template: CardToolConstants.TEMPLATES.PLAYER_HBS,
       id: CardToolConstants.UI_ID_PLAYER,
       title: "Tarot Card",
       closeOnSubmit: false,
-      resizable: true,
+      //resizable: true,
     });
   }
 
