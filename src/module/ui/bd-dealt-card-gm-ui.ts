@@ -107,12 +107,17 @@ export class DealtCardGMUI extends FormApplication<UIOptions, any, CardData> {
     flipCard();
   }
 
+  /**
+   * Deal the card the GM sees to everyone
+   * @param html
+   */
   async _onDealToPlayers(html: JQuery<HTMLElement>) {
     const data = await this.getData();
     console.log("deal to players:");
     console.log(data);
     dealToPlayers(data);
 
+    /***********SEND CARD TO CHAT FOR EVERYONE ************ */
     let cm = `
     <table style="text-align:center">
       <tr><td>Dealt Card:</td></tr>
