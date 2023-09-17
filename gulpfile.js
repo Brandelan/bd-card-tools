@@ -585,6 +585,8 @@ function updateManifest(cb) {
     manifest.file.manifest = `${rawURL}/master/${manifestRoot}/${manifest.name}`;
     manifest.file.download = result;
 
+    console.log(manifest.file.manifest);
+
     const prettyProjectJson = stringify(manifest.file, {
       maxLength: 35,
       indent: "\t",
