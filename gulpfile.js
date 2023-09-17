@@ -624,6 +624,7 @@ function gitTag() {
   return git.tag(
     `v${manifest.file.version}`,
     `Updated to ${manifest.file.version}`,
+    { signed: true },
     (err) => {
       if (err) throw err;
     }
