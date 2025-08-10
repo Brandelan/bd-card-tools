@@ -23,6 +23,12 @@ window.LaunchGMCardUI()
     gulp link --clean : remove the link to the foundry vtt folder
 
     gulp clean : removes all files from the dist folder
+
+    gulp watch: Rebuilds automatically on file changes
+
+    gulp package: Creates a .zip in /package for distribution
+
+    gulp update --update=1.2.3 Updates the version in manifest and package.json
 ```
 
 ## v0.1.0

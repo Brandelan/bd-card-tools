@@ -1,16 +1,16 @@
-import { CardsData } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs";
+// import { CardsData } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs";
 import { CardToolConstants, getGame } from "../../bd-card-tools";
-import { CardFuncs } from "../card-funcs";
-import { flipCard } from "../card-launch-ui";
-import { BaseCards } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs";
+// import { CardFuncs } from "../card-funcs";
+// import { flipCard } from "../card-launch-ui";
+// import { BaseCards } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs";
 const chalk = require("chalk");
-
+import FormApplication = foundry.appv1.api.FormApplication;
 export interface DealersData {
   decks: string;
   discards: string;
 }
 
-export interface UIOptions extends FormApplicationOptions {
+export interface UIOptions extends FormApplication.Options {
   classes: string[];
   popOut: boolean;
   width: number;
@@ -20,14 +20,14 @@ export interface UIOptions extends FormApplicationOptions {
   closeOnSubmit: boolean;
 }
 
-export class DealersUI extends FormApplication<UIOptions, any, DealersData> {
+export class DealersUI extends FormApplication<DealersData, UIOptions> {
   debug: boolean = true;
 
   /**
    * Setup our default options for the UI window
    * get this from
    */
-  static override get defaultOptions(): FormApplicationOptions {
+  static override get defaultOptions(): FormApplication.Options {
     const defaults = super.defaultOptions;
     console.log(`get default options`);
 

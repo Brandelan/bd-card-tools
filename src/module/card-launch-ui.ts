@@ -1,8 +1,23 @@
-import { CardDataConstructorData } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/cardData";
+// import { CardDataConstructorData } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/cardData";
 import { MODULE_NAME, MODULE_TYPE, getGame } from "../bd-card-tools";
 import { DealtCardPlayerUI } from "./ui/bd-dealt-card-player-ui";
 import chalk from "chalk";
 import { CardData, DealtCardGMUI } from "./ui/bd-dealt-card-gm-ui";
+
+// Likely structure for CardDataConstructorData
+interface CardDataConstructorData {
+  faces: Array<{
+    img: string;
+    name?: string;
+  }>;
+  back: {
+    img: string;
+  };
+  face?: any; // Used to determine if the card is face down
+  description?: string;
+  width?: number;
+  height?: number;
+}
 
 /**
  * Open the player's card UI
@@ -328,7 +343,11 @@ function emitCardDisplay(
 ) {
   new Promise((resolve) => {
     // This is the acknowledgement callback
-    const ackCb = (response) => {
+    interface AckResponse {
+      [key: string]: unknown;
+    }
+
+    const ackCb = (response: AckResponse): void => {
       console.log(`socket emit started`);
       resolve(response);
     };

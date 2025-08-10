@@ -13,9 +13,9 @@ export abstract class CardFuncs {
       return;
     }
 
-    const piles: StoredDocument<Cards>[] = [];
-    const decks: StoredDocument<Cards>[] = [];
-    const hands: StoredDocument<Cards>[] = [];
+    const piles: Cards[] = [];
+    const decks: Cards[] = [];
+    const hands: Cards[] = [];
 
     for (let stack of stacks) {
       console.log(`stack type is ${stack.type}`);
@@ -136,9 +136,7 @@ export abstract class CardFuncs {
    * Build the selection dropdown menu
    * @param cards The card array we're building a selection option for
    */
-  public static buildHTMLSelectionOptions(
-    cards: StoredDocument<Cards>[] | undefined | null
-  ) {
+  public static buildHTMLSelectionOptions(cards: Cards[] | undefined | null) {
     let availDecksHtml = "";
 
     if (cards == null) {

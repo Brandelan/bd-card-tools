@@ -4,3 +4,4 @@ types
 dist
 src/module/lib
 src/lib
+.env

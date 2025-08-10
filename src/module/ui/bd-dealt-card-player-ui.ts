@@ -15,7 +15,7 @@ export interface CardData {
   isFaceDown: boolean;
 }
 
-export interface UIOptions extends FormApplicationOptions {
+export interface UIOptions extends FormApplication.Options {
   classes: string[];
   popOut: boolean;
   width: number;
@@ -25,18 +25,14 @@ export interface UIOptions extends FormApplicationOptions {
   closeOnSubmit: boolean;
 }
 
-export class DealtCardPlayerUI extends FormApplication<
-  UIOptions,
-  any,
-  CardData
-> {
+export class DealtCardPlayerUI extends FormApplication<CardData, UIOptions> {
   debug: boolean = false;
 
   /**
    * Setup our default options for the UI window
    * get this from
    */
-  static override get defaultOptions(): FormApplicationOptions {
+  static override get defaultOptions(): FormApplication.Options {
     const defaults = super.defaultOptions;
 
     return mergeObject(super.defaultOptions, {

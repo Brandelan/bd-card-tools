@@ -15,7 +15,7 @@ export interface CardData {
   isFaceDown: boolean;
 }
 
-export interface UIOptions extends FormApplicationOptions {
+export interface UIOptions extends FormApplication.Options {
   classes: string[];
   popOut: boolean;
   width: number;
@@ -25,14 +25,14 @@ export interface UIOptions extends FormApplicationOptions {
   closeOnSubmit: boolean;
 }
 
-export class DealtCardGMUI extends FormApplication<UIOptions, any, CardData> {
+export class DealtCardGMUI extends FormApplication<CardData, UIOptions> {
   debug: boolean = false;
 
   /**
    * Setup our default options for the UI window
    * get this from
    */
-  static override get defaultOptions(): FormApplicationOptions {
+  static override get defaultOptions(): FormApplication.Options {
     const defaults = super.defaultOptions;
 
     return mergeObject(super.defaultOptions, {
@@ -147,8 +147,8 @@ export class DealtCardGMUI extends FormApplication<UIOptions, any, CardData> {
       speaker: ChatMessage.getSpeaker(),
       content: whisperDesc,
       whisper: getGame()
-        ?.users?.filter((u) => u.isGM)
-        .map((u) => u.id),
+        ?.users?.filter((u: User) => u.isGM)
+        .map((u: User) => u.id),
     };
     ChatMessage.create(whsiperData, {});
   }

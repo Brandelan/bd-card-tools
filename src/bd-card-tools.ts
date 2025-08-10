@@ -16,14 +16,14 @@ https://github.com/League-of-Foundry-Developers/foundry-vtt-types/wiki/FAQ
 */
 
 import { registerSettings } from "./module/settings";
-import { preloadTemplates } from "./module/preloadTemplates";
-import { CardDataConstructorData } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/cardData";
+import { preloadTemplates } from "./module/preload-templates";
 import { DealtCardPlayerUI } from "./module/ui/bd-dealt-card-player-ui";
-import chalk from "chalk";
 import { handleSocketEvent, sendCardToGM } from "./module/card-launch-ui";
 import { CardFuncs } from "./module/card-funcs";
 import { DealersUI } from "./module/ui/bd-dealers-ui";
 import { DealtCardGMUI } from "./module/ui/bd-dealt-card-gm-ui";
+// import Game = foundry.Game;
+// import Canvas = foundry.canvas.Canvas;
 
 declare global {
   interface Window {
@@ -53,17 +53,17 @@ export class CardToolConstants {
 }
 
 export function getGame(): Game {
-  if (!(game instanceof Game)) {
+  if (!game) {
     throw new Error("game is not initialized yet!");
   }
-  return game;
+  return game as Game;
 }
 
 export function getCanvas(): Canvas {
-  if (!(canvas instanceof Canvas)) {
-    throw new Error("game is not initialized yet!");
+  if (!canvas) {
+    throw new Error("canvas is not initialized yet!");
   }
-  return canvas;
+  return canvas as Canvas;
 }
 
 /* ------------------------------------ */
