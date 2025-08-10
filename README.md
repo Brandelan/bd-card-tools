@@ -23,7 +23,7 @@ window.LaunchGMCardUI()
 
 ```
 
-    gulp publish -u 0.1.2 : builds and updates manifest to specifies version
+    gulp publish -upgrade 0.1.2 : builds and updates manifest to specifies version
 
     gulp build : builds everything from the 'src' folder to a 'dist' folder
 

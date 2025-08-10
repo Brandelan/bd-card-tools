@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "bd-card-tools",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A simple UI to deal a card to and show the GM then the players",
   "scripts": {
     "package": "gulp package",
@@ -12,9 +12,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Brandelan/bd-map-card.git"
+    "url": "https://github.com/Brandelan/bd-card-tools.git"
   },
-  "homepage": "https://github.com/Brandelan/bd-map-card#readme",
+  "homepage": "https://github.com/Brandelan/bd-card-tools#readme",
   "author": "Brandelan",
   "license": "MIT",
   "devDependencies": {

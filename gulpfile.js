@@ -187,14 +187,10 @@ function githubRelease(done) {
   console.log(`Owner is ${manifest.author}, and repo name is ${manifest.id}`);
   // You must have GITHUB_TOKEN env variable set with a GitHub token
   conventionalGithubReleaser(
+    { type: "oauth", token: process.env.GH_TOKEN },
     {
       // optional config: you can specify preset etc.
       preset: "angular", // or your preferred conventional commit preset
-    },
-    {
-      // GitHub context:
-      owner: `${manifest.author}`, // Replace with your GitHub username or organization
-      repo: `${manifest.id}`, // Replace with your repository name
     },
     done
   );
@@ -203,7 +199,7 @@ function githubRelease(done) {
 // Upload release assets after creating the release with conventional-github-releaser
 async function uploadReleaseAssets() {
   const octokit = new Octokit({
-    auth: process.env.GITHUB_TOKEN,
+    auth: process.env.GH_TOKEN,
   });
 
   const owner = `${manifest.author}`; // Replace with your GitHub username or organization
