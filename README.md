@@ -1,5 +1,14 @@
 # bd-card-tools
 
+## Description
+
+This module is designed to be used with
+Foundry Virtual TableTop, V13.
+
+This module allows the GM to pull a card privately, and then display the card to the chat w/ a description that is shown only to the GM.
+
+This is just a simple means for our home game of allowing the GM to pull a tarot card, and not give the full info of its implications to the player.
+
 ## Run
 
 Execute with a script macro using this function:
@@ -30,12 +39,3 @@ window.LaunchGMCardUI()
 
     gulp update --update=1.2.3 Updates the version in manifest and package.json
 ```
-
-## Description
-
-This module is designed to be used with
-Foundry Virtual TableTop, V13.
-
-This module allows the GM to pull a card privately, and then display the card to the chat w/ a description that is shown only to the GM.
-
-This is just a simple means for our home game of allowing the GM to pull a tarot card, and not give the full info of its implications to the player.
